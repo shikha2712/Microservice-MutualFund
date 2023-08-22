@@ -1,0 +1,37 @@
+### Spring properties
+# HTTP Server (Tomcat) Port
+server: 
+  port: 2351
+  
+logging:
+  file: c:\mylogs\microservicemutualfund.log
+    
+#oracle db settings details
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: mutual
+    password: fund
+    driver-class-name: oracle.jdbc.OracleDriver
+    
+  application:
+    name: Mutual-Fund-Microservice  
+   
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.Oracle12cDialect
+      
+    
+# Discovery Server Access
+eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:2345/eureka/
+        
+
+    
